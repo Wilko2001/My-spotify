@@ -25,10 +25,23 @@ public class SpotifyAppApplication {
     private static final ClientCredentialsRequest clientCredentialsRequest = spotifyApi.clientCredentials()
             .build();
 
+    public static void clientCredentials_Sync() {
+        System.out.println("Starting client credentials sync...");
+        try {
+            final ClientCredentials clientCredentials = clientCredentialsRequest.execute();
+
+            spotifyApi.setAccessToken(clientCredentials.getAccessToken());
+            System.out.println("Access token: " + clientCredentials.getAccessToken());
+            System.out.println("Expires in: " + clientCredentials.getExpiresIn());
+        } catch (IOException | SpotifyWebApiException | ParseException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
     public static void main(String[] args) {
         SpringApplication.run(SpotifyAppApplication.class, args);
+        clientCredentials_Sync();
 
-        System.out.println(spotifyApi);
     }
 
 }
