@@ -13,12 +13,20 @@ import java.io.IOException;
 public class SpotifyAppApplication {
     public static void main(String[] args) throws IOException, ParseException, SpotifyWebApiException {
         SpringApplication.run(SpotifyAppApplication.class, args);
-    try {
-        System.out.println(new SpotifyController().getSong("5QpjkwvagLUbiqbhD71UCh"));
-    } catch (Exception e) {
-        System.out.println("error: " + e.getMessage());
+        try {
+            System.out.println(new SpotifyController().getSong("5QpjkwvagLUbiqbhD71UCh"));
+        } catch (Exception e) {
+            System.out.println("error: " + e.getMessage());
         }
-    System.out.println(new SpotifyController().getMood("5QpjkwvagLUbiqbhD71UCh"));
-    }
+        System.out.println(new SpotifyController().getMood("5QpjkwvagLUbiqbhD71UCh"));
 
+        PlaylistLinkedList playlist = new PlaylistLinkedList();
+
+        playlist.addSong(new Song("High Hopes", "Gentlemens Dub Club", "High Hopes", "https://open.spotify.com/playlist/44szbwVTGjGOMZVsan77Dx?si=a9aad07d33f742cf"));
+        playlist.addSong(new Song("Rat-at-at", "Skints", "Part & Parcel", "https://open.spotify.com/playlist/44szbwVTGjGOMZVsan77Dx?si=a9aad07d33f742cf"));
+        playlist.addSong(new Song("Nowhere else to go", "Too Many Zooz", "Retail Therapy", "https://open.spotify.com/playlist/44szbwVTGjGOMZVsan77Dx?si=a9aad07d33f742cf"));
+
+
+        playlist.displayPlaylist();
+    }
 }
