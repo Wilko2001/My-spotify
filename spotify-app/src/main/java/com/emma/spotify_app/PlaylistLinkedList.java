@@ -25,4 +25,17 @@ public class PlaylistLinkedList {
             current = current.next;
         }
     }
+
+    public void middlePlayList() {
+        Node slowPtr = head;
+        Node fastPtr = head;
+
+        if (head != null) {
+            while (fastPtr != null && fastPtr.next != null) {
+                fastPtr = fastPtr.next.next;
+                slowPtr = slowPtr.next;
+            }
+            System.out.println("The middle element is: " + slowPtr.song);
+        }
+    }
 }
