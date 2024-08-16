@@ -25,7 +25,10 @@ public class PlaylistLinkedList {
             current = current.next;
         }
     }
-
+//    Traverse linked list using two pointers.
+//    Move one pointer by one and the other pointers by two.
+//    When the fast pointer reaches the end slow pointer will reach the middle of the linked list.
+//    Also known as Floyd’s Cycle Finding Algorithm.
     public void middlePlayList() {
         Node slowPtr = head;
         Node fastPtr = head;
