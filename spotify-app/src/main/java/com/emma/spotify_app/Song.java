@@ -12,25 +12,4 @@ public class Song {
         this.album = album;
         this.spotifyUrl = spotifyUrl;
     }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getArtist() {
-        return artist;
-    }
-
-    public String getAlbum() {
-        return album;
-    }
-
-    public String getSpotifyUrl() {
-        return spotifyUrl;
-    }
-
-    @Override
-    public String toString() {
-        return title + " by " + artist + " from the album " + album + " ( " + spotifyUrl + " ) ";
-    }
 }
