@@ -27,10 +27,6 @@ public class SpotifyAppApplication {
             float mood = controller.getMood(song.getId());
             float valence = controller.getValence(song.getId());
 
-            List<Track> happyPlaylist = new ArrayList<>();
-            if (mood > 0.5 && valence > 0.5) {
-                happyPlaylist.add(song);
-            }
 //            System.out.println(happyPlaylist);
 
             System.out.println("How are you feeling today? Please pick a mood that best suits you: ");
@@ -42,10 +38,30 @@ public class SpotifyAppApplication {
 
             String userMood = scan.nextLine();
 
+            List<Track> happyPlaylist = new ArrayList<>();
+            List<Track> sadPlaylist = new Arraylist<>();
+            List<Track> angryPlaylist = new Arraylist<>();
+            List<Track> confusedPlaylist = new ArrayList<>();
+            List<Track> calmPlaylist = new ArrayList<>();
+
+            if (mood > 0.5 && valence > 0.5) {
+                happyPlaylist.add(song);
+            }
+
             switch (userMood) {
                 case "Happy": System.out.println(happyPlaylist);
+                break;
+                case "Sad": System.out.println(sadPlaylist);
+                break;
+                case "Angry": System.out.println(angryPlaylist);
+                break;
+                case "Confused": System.out.println(confusedPlaylist);
+                break;
+                case "Calm": System.out.println(calmPlaylist);
+                default:
+                    System.out.println("Please choose a mood from the list above.")
             }
-//            System.out.println("Here are some songs I think you might like: " + )
+//            System.out.println("Here is a playlist I think you might like: " + userMood)
 
         } catch (Exception e) {
             System.out.println("error: " + e.getMessage());

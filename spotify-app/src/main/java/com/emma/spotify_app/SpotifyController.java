@@ -30,12 +30,16 @@ public class SpotifyController {
     public Track getSong(String trackId) throws IOException, ParseException, SpotifyWebApiException {
         return spotifyApi.getTrack(trackId).build().execute();
     }
-    public Float getMood(String track) throws IOException, ParseException, SpotifyWebApiException {
-        return spotifyApi.getAudioFeaturesForTrack(track).build().execute().getEnergy();
+    public Float getMood(String trackId) throws IOException, ParseException, SpotifyWebApiException {
+        return spotifyApi.getAudioFeaturesForTrack(trackId).build().execute().getEnergy();
     }
 
-    public Float getValence(String track) throws IOException, ParseException, SpotifyWebApiException {
-        return spotifyApi.getAudioFeaturesForTrack(track).build().execute().getValence();
+    public Float getValence(String trackId) throws IOException, ParseException, SpotifyWebApiException {
+        return spotifyApi.getAudioFeaturesForTrack(trackId).build().execute().getValence();
+    }
+
+    public String getPlaylist(String playlistId) throws IOException, ParseException, SpotifyWebApiException {
+        return null;
     }
     // Handles the client credentials authentication with the spotify api, it requests the access token. sets it in spotifyApi instance,
     //and prints the token.
