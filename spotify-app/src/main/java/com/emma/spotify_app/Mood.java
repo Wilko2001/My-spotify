@@ -5,7 +5,7 @@ public enum Mood {
     SAD,
     ANGRY,
     CONFUSED,
-    CALM
+    CALM;
 
     public static Mood valueOfIgnoreCase(String name) {
         return valueOf(name.toUpperCase());

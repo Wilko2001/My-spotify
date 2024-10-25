@@ -18,10 +18,11 @@ public class SongProcessor {
         float mood = controller.getMood(song.getId());
         float valence = controller.getValence(song.getId());
 
-        if (mood > 0.5 && valence > 0.5) {
-            return Mood.HAPPY;
-        } else if (mood < 0.5 && valence < 0.5) {
-           return Mood.SAD;
-        } else if ()
+//        if (mood > 0.5 && valence > 0.5) {
+//            return Mood.HAPPY;
+//        } else if (mood < 0.5 && valence < 0.5) {
+//           return Mood.SAD;
+//        } else if ()
+        return null;
     }
 }
