@@ -7,6 +7,7 @@ import se.michaelthelin.spotify.model_objects.credentials.ClientCredentials;
 import se.michaelthelin.spotify.model_objects.specification.Track;
 import se.michaelthelin.spotify.requests.authorization.client_credentials.ClientCredentialsRequest;
 import org.apache.hc.core5.http.ParseException;
+import se.michaelthelin.spotify.requests.data.albums.GetAlbumsTracksRequest;
 
 import java.io.IOException;
 
@@ -38,8 +39,8 @@ public class SpotifyController {
         return spotifyApi.getAudioFeaturesForTrack(trackId).build().execute().getValence();
     }
 
-    public String getPlaylist(String playlistId) throws IOException, ParseException, SpotifyWebApiException {
-        return null;
+    public String getAlbumTracks(String albumTrackId) throws IOException, ParseException, SpotifyWebApiException {
+        return spotifyApi.getAlbumsTracks(albumTrackId).build().execute().toString();
     }
     // Handles the client credentials authentication with the spotify api, it requests the access token. sets it in spotifyApi instance,
     //and prints the token.

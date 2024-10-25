@@ -12,4 +12,14 @@ public class Song {
         this.album = album;
         this.spotifyUrl = spotifyUrl;
     }
+
+    @Override
+    public int hashCode() {
+        return title.hashCode() + album.hashCode() + artist.hashCode() + album.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }
